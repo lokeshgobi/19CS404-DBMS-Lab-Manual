@@ -109,10 +109,14 @@ Insert a book with ISBN 978-1234567890, Title Data Science Essentials, Author Ja
 
 For example:
 
-Test	                  Result
-SELECT * FROM Books;    ISBN            Title                    Author      Publisher   Year
-                        --------------  -----------------------  ----------  ----------  ----------
-                        978-1234567890  Data Science Essentials  Jane Doe    TechBooks   2024
+Test :
+
+SELECT * FROM Books; 
+Result :
+
+ISBN            Title                    Author      Publisher   Year
+--------------  -----------------------  ----------  ----------  ----------
+978-1234567890  Data Science Essentials  Jane Doe    TechBooks   2024
 
 
 ```sql
@@ -137,11 +141,15 @@ Create a new table named products with the following specifications:
    - list_price is greater than or equal to 0
 For example:
 
-Test	                                                                                        Result
-INSERT INTO products (product_id, product_name, list_price) VALUES (2, 'Product B', 50.00);   product_id  product_name  list_price  discount
-SELECT * FROM products;                                                                       ----------  ------------  ----------  ----------
-                                                                                              2           Product B     50          0
+Test :                                                                                     
+INSERT INTO products (product_id, product_name, list_price) VALUES (2, 'Product B', 50.00);   
+SELECT * FROM products;                                                                       
+                                                                                              
+Result :
 
+product_id  product_name  list_price  discount
+----------  ------------  ----------  ----------
+2           Product B     50          0
 
 
 
@@ -173,12 +181,16 @@ Create a table named Members with the following columns:
 * JoinDate as DATE
 For example:
 
-Test	                               Result:
-pragma table_info('Members');        cid         name        type        notnull     dflt_value  pk
-                                     ----------  ----------  ----------  ----------  ----------  ----------
-                                     0           MemberID    INTEGER     0                       0
-                                     1           MemberName  TEXT        0                       0
-                                     2           JoinDate    DATE        0                       0
+Test :
+pragma table_info('Members'); 
+
+Result :
+
+cid         name        type        notnull     dflt_value  pk
+----------  ----------  ----------  ----------  ----------  ----------
+0           MemberID    INTEGER     0                       0
+1           MemberName  TEXT        0                       0
+2           JoinDate    DATE        0                       0
 
 
 ```sql
@@ -204,10 +216,17 @@ Create a new table named contacts with the following specifications:
 * phone as TEXT and not NULL with a check constraint to ensure the length of phone is at least 10 characters.
 For example:
 
-Test	                                                                      Result :
-INSERT INTO contacts (contact_id, first_name, last_name, email, phone)      contact_id  first_name  last_name   email                 phone
-VALUES (1, 'John', 'Doe', 'john.doe@example.com', '1234567890');            ----------  ----------  ----------  --------------------  ----------
-SELECT * FROM contacts;                                                     1           John        Doe         john.doe@example.com  1234567890
+Test :                                                               
+INSERT INTO contacts (contact_id, first_name, last_name, email, phone)      
+VALUES (1, 'John', 'Doe', 'john.doe@example.com', '1234567890');            
+SELECT * FROM contacts;                                                     
+
+Result :
+
+contact_id  first_name  last_name   email                 phone
+----------  ----------  ----------  --------------------  ----------
+1           John        Doe         john.doe@example.com  1234567890
+
 
 
 ```sql
@@ -239,11 +258,16 @@ RollNo      Name        Gender      Subject     MARKS
 
 For example:
 
-Test                                             Result :
-SELECT * FROM Student_details;                   RollNo      Name        Gender      Subject     MARKS
-                                                 ----------  ----------  ----------  ----------  ----------
-                                                 202         Ella King   F           Chemistry   87
-                                                 203         James Bond  M           Literature  78
+Test :
+
+SELECT * FROM Student_details; 
+
+Result :
+
+RollNo      Name        Gender      Subject     MARKS
+----------  ----------  ----------  ----------  ----------
+202         Ella King   F           Chemistry   87
+203         James Bond  M           Literature  78
 
 
 ```sql
@@ -270,17 +294,22 @@ Write an SQL Query to add the attributes designation, net_salary, and dob to the
 
 For example:
 
-Test	                                    Result :
-pragma table_info('Companies');           cid         name        type        notnull     dflt_value  pk
-                                          ----------  ----------  ----------  ----------  ----------  ----------
-                                          0           id          int         0                       0
-                                          1           name        varchar(50  0                       0
-                                          2           address     text        0                       0
-                                          3           email       varchar(50  0                       0
-                                          4           phone       varchar(10  0                       0
-                                          5           designatio  varchar(50  0                       0
-                                          6           net_salary  number      0                       0
-                                          7           dob         date        0                       0
+Test :
+
+pragma table_info('Companies');         
+
+Result :
+
+cid         name        type        notnull     dflt_value  pk
+----------  ----------  ----------  ----------  ----------  ----------
+0           id          int         0                       0
+1           name        varchar(50  0                       0
+2           address     text        0                       0
+3           email       varchar(50  0                       0
+4           phone       varchar(10  0                       0
+5           designatio  varchar(50  0                       0
+6           net_salary  number      0                       0
+7           dob         date        0                       0
 
 ```sql
 ALTER TABLE Companies ADD COLUMN designation varchar(50);
@@ -308,15 +337,19 @@ Sample table: customer
 
 For example:
 
-Test	                                   Result :
-pragma table_info('customer');           cid         name         type                               notnull     dflt_value  pk
-                                         ----------  -----------  ---------------------------------  ----------  ----------  ----------
-                                         0           customer_id  integer primarykey auto increment  0                       0
-                                         1           cust_name    varchar2(30)                       0                       0
-                                         2           city         varchar(30)                        0                       0
-                                         3           grade        number                             0                       0
-                                         4           salesman_id  number                             0                       0
-                                         5           discount     DECIMAL(5,2)                       0                       0
+Test :
+pragma table_info('customer'); 
+
+Result :
+
+cid         name         type                               notnull     dflt_value  pk
+----------  -----------  ---------------------------------  ----------  ----------  ----------
+0           customer_id  integer primarykey auto increment  0                       0
+1           cust_name    varchar2(30)                       0                       0
+2           city         varchar(30)                        0                       0
+3           grade        number                             0                       0
+4           salesman_id  number                             0                       0
+5           discount     DECIMAL(5,2)                       0                       0
 
 
 ```sql
@@ -341,10 +374,17 @@ Create a new table named item with the following specifications and constraints:
   7. item_desc and rate should not accept NULL.
 For example:
 
-Test	                                                       Result :
-INSERT INTO item VALUES("ITM5","Charlie Gold",700,"COM4");   item_id     item_desc     rate        icom_id
-UPDATE company SET com_id='COM5' WHERE com_id='COM4';        ----------  ------------  ----------  ----------
-SELECT * FROM item;                                          ITM5        Charlie Gold  700
+Test :
+
+INSERT INTO item VALUES("ITM5","Charlie Gold",700,"COM4");   
+UPDATE company SET com_id='COM5' WHERE com_id='COM4';        
+SELECT * FROM item;                                          
+
+Result :
+
+item_id     item_desc     rate        icom_id
+----------  ------------  ----------  ----------
+ITM5        Charlie Gold  700
 
 ```sql
 CREATE TABLE item (
@@ -372,12 +412,18 @@ Table attributes are EmployeeID, Name, Department, Salary
 
 For example:
 
-Test	                      Result :
-select * from Employee;     EmployeeID  Name        Department  Salary
-                            ----------  ----------  ----------  ----------
-                            201         John Doe    HR          50000
-                            202         Jane Smith  Engineerin  75000
-                            203         Emily Davi  Marketing   60000
+Test :
+
+select * from Employee;    
+
+Result :
+
+EmployeeID  Name        Department  Salary
+----------  ----------  ----------  ----------
+201         John Doe    HR          50000
+202         Jane Smith  Engineerin  75000
+203         Emily Davi  Marketing   60000
+
 
 
 ```sql
@@ -402,10 +448,14 @@ Create a table named Employees with the following constraints:
  * DepartmentID should be a foreign key referencing the Departments table.
 For example:
 
-Test	                                                                                 Result : 
--- Attempt to insert a record with NULL FirstName                                      Error: NOT NULL constraint failed: Employees.FirstName
+Test : 
+-- Attempt to insert a record with NULL FirstName                                      
 INSERT INTO Employees (EmployeeID, FirstName, LastName, Email, Salary, DepartmentID)
 VALUES (1, NULL, 'Doe', 'john.doe@example.com', 50000, 1);
+
+Result : 
+
+Error: NOT NULL constraint failed: Employees.FirstName
 
 
 ```sql
