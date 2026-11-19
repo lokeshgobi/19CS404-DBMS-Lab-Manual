@@ -50,7 +50,6 @@ id  name  age  address     salary
 For example:
 
 Result
-
 COUNT
 ----------
 4
