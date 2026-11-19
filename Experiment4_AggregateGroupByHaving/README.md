@@ -38,123 +38,159 @@ HAVING condition;
 
 **Question 1**
 --
--- Paste Question 1 here
+Write a SQL query to find the number of employees who are having the same age removing the duplicate values.
+
+Sample table: employee
+
+id  name  age  address     salary
+1   Paul  32   California  20000
+4   Mark  25   Richtown    65000
+5   David 27   Texas       85000
+
+For example:
+
+Result
+COUNT
+----------
+4
+
+
 
 ```sql
--- Paste your SQL code below for Question 1
+SELECT COUNT(DISTINCT age) AS COUNT
+FROM employee;
 ```
 
 **Output:**
+<img width="1347" height="445" alt="image" src="https://github.com/user-attachments/assets/0cf9d57f-e3a9-459e-8ea2-c5c7442ac366" />
 
-![Output1](output.png)
 
 **Question 2**
 ---
--- Paste Question 2 here
+Write a SQL query to find the total income of employees aged 40 or above.
+
+Table: employee
+
+name        type
+----------  ----------
+id          INTEGER
+name        TEXT
+age         INTEGER
+city        TEXT
+income      INTEGER
+For example:
+
+Result
+total_income
+------------
+1800000
+
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT SUM(income) AS total_income
+FROM employee
+WHERE age >= 40;
 ```
 
 **Output:**
+<img width="1317" height="443" alt="image" src="https://github.com/user-attachments/assets/1b9c7c44-e080-45ad-a7ba-e4188a5cc771" />
 
-![Output2](output.png)
 
 **Question 3**
 ---
--- Paste Question 3 here
+
+Write a SQL query to find What is the age difference between the youngest and oldest employee in the company.
+
+Table: employee
+
+name        type
+----------  ----------
+id          INTEGER
+name        TEXT
+age         INTEGER
+city        TEXT
+income      INTEGER
+For example:
+
+Result
+age_difference
+--------------
+13
 
 ```sql
--- Paste your SQL code below for Question 3
+SELECT MAX(age) - MIN(age) AS age_difference
+FROM employee;
 ```
 
 **Output:**
 
-![Output3](output.png)
+
+<img width="1313" height="428" alt="image" src="https://github.com/user-attachments/assets/a6d09698-baa0-43a8-af13-ea6fad470b1b" />
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+Which cities (addresses) in the "customer1" table have an average salary lesser than Rs. 15000
+
+Sample table: customer1
+
+<img width="1342" height="233" alt="image" src="https://github.com/user-attachments/assets/db19960e-3363-41a3-9f19-5cba6b77c631" />
+
+For example:
+
+Result
+address     AVG(salary)
+----------  -----------
+Ahmedabad   2000.0
+Bhopal      8500.0
+Delhi       1500.0
+Hyderabad   4500.0
+Indore      10000.0
+Kota        2000.0
+Mumbai      6500.0
+
 
 ```sql
--- Paste your SQL code below for Question 4
+SELECT address, AVG(salary)
+FROM customer1
+GROUP BY address
+HAVING AVG(salary) < 15000
+ORDER BY address;
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1307" height="736" alt="image" src="https://github.com/user-attachments/assets/7e6cbac3-79c5-4e4b-8f04-9694a41dafdf" />
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+Write the SQL query that achieves the grouping of data by occupation, calculates the average work hours for each occupation, and includes only those occupations where the average work hour falls between 10 and 12.
+
+Sample table: employee1
+
+<img width="1117" height="217" alt="image" src="https://github.com/user-attachments/assets/40d74b4c-a70f-4858-8c81-3bdb6b4b1a8d" />
+
+
+For example:
+
+Result
+occupation  AVG(workhour)
+----------  -------------
+Business    10.0
+Engineer    12.0
+
 
 ```sql
--- Paste your SQL code below for Question 5
+SELECT occupation, AVG(workhour)
+FROM employee1
+GROUP BY occupation
+HAVING AVG(workhour) BETWEEN 10 AND 12;
 ```
 
 **Output:**
 
-![Output5](output.png)
-
-**Question 6**
----
--- Paste Question 6 here
-
-```sql
--- Paste your SQL code below for Question 6
-```
-
-**Output:**
-
-![Output6](output.png)
-
-**Question 7**
----
--- Paste Question 7 here
-
-```sql
--- Paste your SQL code below for Question 7
-```
-
-**Output:**
-
-![Output7](output.png)
-
-**Question 8**
----
--- Paste Question 8 here
-
-```sql
--- Paste your SQL code below for Question 8
-```
-
-**Output:**
-
-![Output8](output.png)
-
-**Question 9**
----
--- Paste Question 9 here
-
-```sql
--- Paste your SQL code below for Question 9
-```
-
-**Output:**
-
-![Output9](output.png)
-
-**Question 10**
----
--- Paste Question 10 here
-
-```sql
--- Paste your SQL code below for Question 10
-```
-
-**Output:**
-
-![Output10](output.png)
+<img width="1320" height="511" alt="image" src="https://github.com/user-attachments/assets/3412e334-0c41-4783-9ae2-614ce96070fe" />
 
 
 ## RESULT
